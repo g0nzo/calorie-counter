@@ -1,0 +1,39 @@
+create table products(
+id integer primary key autoincrement,
+name text,
+calories double,
+protein double,
+carbohydrates double,
+fat double,
+amount double,
+unit String,
+price double
+);
+
+insert into products (name, calories, protein, carbohydrates, fat, amount, unit) values ('ziemniak', 
+1, 2, 3, 4, 5, 'gram');
+insert into products (name, calories, protein, carbohydrates, fat, amount, unit) values ('chleb', 
+1, 2, 3, 4, 5, 'gram');
+insert into products (name, calories, protein, carbohydrates, fat, amount, unit) values ('ry¿', 
+1, 2, 3, 4, 5, 'gram');
+
+update products calories=10 where name='ryz';
+
+create table meals(
+id integer primary key autoincrement,
+name text
+);
+
+insert into meals(name) values ('nazwa posilku');
+
+create table ingredients(
+id integer primary key autoincrement,
+productId int,
+mealId int,
+amount double
+);
+
+insert into ingredients (productId, mealId, amount) values (5, 2, 500.0);
+insert into ingredients (productId, mealId, amount) values (3, 2, 130.0);
+
+select id from products where name='chleb';
